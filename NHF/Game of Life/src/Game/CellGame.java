@@ -44,20 +44,16 @@ public class CellGame {
                 previousCellArray[i][j] = cellArray[i][j];
             }
         }
-
-        // ideiglenesen itt a B../S..
-        int B[] = {3};
-        int S[] = {2, 3};
         
         for (int i = 0; i < cellArray.length; ++i) {
             for (int j = 0; j < cellArray[i].length; ++j) {
                 int aliveN = getAliveNeighbours(i, j, previousCellArray);
 
-                if (previousCellArray[i][j] == Cell.ALIVE && !containsInt(S, aliveN)) {
+                if (previousCellArray[i][j] == Cell.ALIVE && !containsInt(Reference.S, aliveN)) {
                     //System.out.println(aliveN);
                     cellArray[i][j] = Cell.DEAD;
                 } 
-                else if (previousCellArray[i][j] == Cell.DEAD && containsInt(B, aliveN)) {
+                else if (previousCellArray[i][j] == Cell.DEAD && containsInt(Reference.B, aliveN)) {
                     cellArray[i][j] = Cell.ALIVE;
                 }
             }

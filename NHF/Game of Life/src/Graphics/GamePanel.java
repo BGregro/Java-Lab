@@ -21,7 +21,7 @@ public class GamePanel extends JPanel  implements Runnable {
     @Override
     public synchronized void run() {
         // játék működése:
-        update();
+        this.repaint();
         while (true) {
             while (!Reference.RUNNING) {
                 try {
