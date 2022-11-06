@@ -29,7 +29,6 @@ public class GameWindow {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         game.start();
-        
     }
 
 

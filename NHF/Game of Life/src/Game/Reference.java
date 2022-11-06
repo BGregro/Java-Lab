@@ -1,6 +1,8 @@
 package Game;
 
 public class Reference {
+    public static int[] B;
+    public static int[] S;
     // itt csak a játék ablak adatai vannak, a menü ablakhoz nem kell
     public static final int WINDOW_WIDTH = 1920;
     public static final int WINDOW_HEIGHT = 1080;

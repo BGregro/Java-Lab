@@ -1,6 +1,7 @@
 package Game;
 
 import java.util.Random;
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class CellGame {
@@ -37,7 +38,6 @@ public class CellGame {
     }
 
     public void updateGame() {
-        // ideiglenesen itt a B../S..
         Cell[][] previousCellArray = new Cell[(Reference.GAME_HEIGHT/Reference.CELL_SIZE)][(Reference.GAME_WIDTH/Reference.CELL_SIZE)];
         for (int i = 0; i < cellArray.length; ++i) {
             for (int j = 0; j < cellArray[i].length; ++j) {
@@ -45,6 +45,7 @@ public class CellGame {
             }
         }
 
+        // ideiglenesen itt a B../S..
         int B[] = {3};
         int S[] = {2, 3};
         
@@ -96,7 +97,15 @@ public class CellGame {
             for (int j = 0; j < cellArray[i].length; ++j) {
                 g.setColor(cellArray[i][j].getColor());
                 g.fillRect(j * Reference.CELL_SIZE, i * Reference.CELL_SIZE, Reference.CELL_SIZE, Reference.CELL_SIZE);
+                g.setColor(Color.darkGray);
+                g.drawRect(j * Reference.CELL_SIZE, i * Reference.CELL_SIZE, Reference.CELL_SIZE, Reference.CELL_SIZE);
             }
         }
+    }
+
+    // kattintás utáni beállítás
+    public void changeSingleCell(int x, int y) {
+        //System.out.println("x index: " + (int) Math.floor(x/Reference.CELL_SIZE) + " y index:" +(int) Math.floor(y/Reference.CELL_SIZE));
+        cellArray[(int) Math.floor(y/Reference.CELL_SIZE)][(int) Math.floor(x/Reference.CELL_SIZE)] = Cell.ALIVE;
     }
 }

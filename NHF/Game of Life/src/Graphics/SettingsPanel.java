@@ -41,7 +41,7 @@ public class SettingsPanel extends JPanel {
         add(saveButton);
 
         // Load gomb: be lehet vele tölteni egy korábban lementett állapotot
-        JButton loadButton = new JButton("Save");
+        JButton loadButton = new JButton("Load");
         add(loadButton);
 
         // Start gomb: elindítja a szimulációt és utána meg lehet állítani - DONE
